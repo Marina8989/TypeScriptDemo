@@ -33,4 +33,21 @@ let arrMix: (string | number | boolean)[] = [1, 'a', true]
 
 //What if you need to display a spesific type in a specific place
 //For that you can use tuple
+//So here the order matters
 let arrTup: [string, number] = ["a string", 5];
+
+//Object on TypeScript
+
+let person = {
+    name: "Jesse",
+    age: 25
+}
+person.name = "Jo"
+
+//elias
+type stringOrNum = string | number;
+let years: stringOrNum;
+years = 2022;
+years = "2022";
+
+//functions in TypeScript
