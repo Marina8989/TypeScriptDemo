@@ -51,3 +51,59 @@ years = 2022;
 years = "2022";
 
 //functions in TypeScript
+
+let calSums: (a: number, b:number) => number;
+
+calSums = (first: number, second: number, third?: number) => {
+    return first + second
+}
+calSums(2,2)
+
+//interfaces in TypeScript
+
+interface PersonInterface {
+    name: string;
+    age: number;
+}
+
+let mike: PersonInterface = {
+    name: 'Mike',
+    age: 34
+}
+
+//interfaces on classes
+
+// class Person implements PersonInterface{
+//     private name: string;
+//     age: number;
+
+//     constructor(n: string, a: number) {
+//         this.name = n;
+//         this.age = a;
+//     }
+
+//     greet() {
+//         return `Hi, my name is ${this.name} and I am ${this.age}`;
+//     }
+// }
+
+// let jo = new Person('Jo', 35)
+
+// console.log(jo.greet())
+
+
+//modified version of the class
+class Person implements PersonInterface{
+  constructor(public name: string, public age: number) {}
+
+    greet() {
+        return `Hi, my name is ${this.name} and I am ${this.age}`;
+    }
+}
+
+let jo = new Person('Jo', 35)
+
+console.log(jo.greet())
+
+
+//DOM and Type casting
