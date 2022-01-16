@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let calSum = (first, second, third) => {
     return first + second;
 };
@@ -83,3 +84,32 @@ inputForm.addEventListener('submit', (e) => {
     greeting.innerText = person.greet();
     inputForm.reset();
 });
+//Generics
+function doSomething(arg) {
+    // do smth
+    return arg;
+}
+doSomething('string');
+const abook = {
+    id: 1,
+    name: 'Title 1',
+    data: 'more data here'
+};
+const bBook = {
+    id: 2,
+    name: 'Title 2',
+    data: ['review', 'one', 'two']
+};
+//enums
+var ManufacturerMake;
+(function (ManufacturerMake) {
+    ManufacturerMake[ManufacturerMake["TESLA"] = 0] = "TESLA";
+    ManufacturerMake[ManufacturerMake["AUDI"] = 1] = "AUDI";
+    ManufacturerMake[ManufacturerMake["MERCEDES"] = 2] = "MERCEDES";
+    ManufacturerMake[ManufacturerMake["VOLVO"] = 3] = "VOLVO";
+})(ManufacturerMake || (ManufacturerMake = {}));
+const myCar = {
+    year: 2021,
+    make: ManufacturerMake.VOLVO
+};
+console.log(myCar.make);

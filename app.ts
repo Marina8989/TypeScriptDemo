@@ -1,3 +1,5 @@
+import { textSpanOverlap } from "typescript";
+
 let calSum = (first: number, second: number, third?: number) => {
     return first + second;
 };
@@ -120,3 +122,40 @@ inputForm.addEventListener('submit', (e) => {
 
     inputForm.reset();
 })
+
+
+//Generics
+
+function doSomething<T>(arg: T){
+    // do smth
+    return arg
+}
+
+doSomething<string>('string')
+
+interface book <T>{
+    id: number;
+    name: string;
+    data: T
+}
+
+const abook: book<string> = {
+    id: 1,
+    name: 'Title 1',
+    data:'more data here'
+}
+
+const bBook: book<string[]> = {
+    id: 2,
+    name: 'Title 2',
+    data: ['review', 'one', 'two']
+}
+
+//enums
+enum ManufacturerMake { TESLA, AUDI, MERCEDES, VOLVO}
+const myCar = {
+    year: 2021,
+    make: ManufacturerMake.VOLVO
+}
+
+console.log(myCar.make)
