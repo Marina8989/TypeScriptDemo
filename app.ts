@@ -107,3 +107,16 @@ console.log(jo.greet())
 
 
 //DOM and Type casting
+const inputName = document.querySelector('#name') as HTMLInputElement;
+const inputAge = document.querySelector('#age') as HTMLInputElement;
+const inputForm = document.querySelector('form')!;
+const greeting = document.querySelector('.greeting') as HTMLDivElement ;
+
+inputForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const person = new Person(inputName.value, inputAge.valueAsNumber)
+
+    greeting.innerText = person.greet();
+
+    inputForm.reset();
+})

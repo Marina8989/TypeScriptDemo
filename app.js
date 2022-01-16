@@ -47,10 +47,24 @@ let mike = {
     age: 34
 };
 //interfaces on classes
+// class Person implements PersonInterface{
+//     private name: string;
+//     age: number;
+//     constructor(n: string, a: number) {
+//         this.name = n;
+//         this.age = a;
+//     }
+//     greet() {
+//         return `Hi, my name is ${this.name} and I am ${this.age}`;
+//     }
+// }
+// let jo = new Person('Jo', 35)
+// console.log(jo.greet())
+//modified version of the class
 class Person {
-    constructor(n, a) {
-        this.name = n;
-        this.age = a;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
     greet() {
         return `Hi, my name is ${this.name} and I am ${this.age}`;
@@ -58,3 +72,14 @@ class Person {
 }
 let jo = new Person('Jo', 35);
 console.log(jo.greet());
+//DOM and Type casting
+const inputName = document.querySelector('#name');
+const inputAge = document.querySelector('#age');
+const inputForm = document.querySelector('form');
+const greeting = document.querySelector('.greeting');
+inputForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const person = new Person(inputName.value, inputAge.valueAsNumber);
+    greeting.innerText = person.greet();
+    inputForm.reset();
+});
