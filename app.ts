@@ -1,25 +1,16 @@
-
-function add(n1: number, n2: number) {
-     return n1 + n2;
-}
-// function printResult(num: number): void {
-//   console.log('Result: ' + num)
-// }
-
-// printResult(add(5,12))
+let userInput: unknown; // unkown is a better choice over type any
+let userName: string;
 
 
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-    const result = n1 + n2;
-    cb(result)
+userInput = 5;
+userInput = 'Max';
+
+if(typeof userInput === 'string') {
+  userName = userInput;
 }
 
-addAndHandle(10,20, (result) => {
-    console.log(result)
-})
 
-let combineValues: (a: number, b: number) => number;
-
-combineValues = add;
-console.log(combineValues(8,8));
-
+function generateError(message: string, code: number): never{
+   throw {message: message, errorCode: code}
+}
+generateError('An error occured', 500)
